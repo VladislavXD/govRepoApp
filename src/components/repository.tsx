@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import file from "/9791-7969-dca6-cdc5-94a6-0517-5663.pdf"
 
@@ -8,8 +7,8 @@ const CAPTCHA_IMAGES = [
 ];
 
 const Repo = () => {
-  const [searchParams] = useSearchParams();
-  const guid = searchParams.get("guid");
+
+
   const [pinCode, setPinCode] = useState("");
   const [hasError, setHasError] = useState("");
   const [captchaKey, setCaptchaKey] = useState("");
@@ -131,7 +130,7 @@ const Repo = () => {
               <div className="flex items-center w-full">
                 <div 
                   className="w-[120px] h-[34px] shrink-0 border border-[#ccc] border-r-0 rounded-l-[4px] bg-white cursor-pointer hover:bg-gray-50 flex items-center justify-center px-1 overflow-hidden transition-all"
-                  onClick={refreshCaptcha}
+                  onClick={() => refreshCaptcha(false)}
                   title="Нажмите, чтобы обновить код"
                 >
                   <img 

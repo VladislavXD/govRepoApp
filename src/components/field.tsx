@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-const field = (props: Props) => {
+const field = () => {
 	return (
 		<div>field</div>
 	)
